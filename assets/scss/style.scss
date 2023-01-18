@@ -1,0 +1,95 @@
+@import 'default';
+
+@mixin font($size){
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $size;
+}
+
+@mixin button($color){
+    color: $color;
+    border: 1px solid $color;
+@include font(900);
+font-size: 14px;
+text-transform: capitalize;
+padding: 10px 0;
+border-radius: 5px;
+width: 100%;
+transition: 600ms;
+}
+
+@mixin activeButton($color){
+@include button($color);
+color: #fff;
+background-color: $color;
+cursor: pointer;
+}
+
+.btn{
+    &.orange{
+        @include button(#fff);
+        &.hover{
+            @include activeButton(#000)
+        }
+    }
+    &.blue{
+        @include button(#000);
+        &.hover{
+            @include activeButton(#fff)
+        }
+    }
+}
+
+p{
+    @include font(400)
+}
+
+h1,h2,h3{
+@include font(900)
+}
+
+h4{
+    @include font(700)
+}
+
+body{
+    padding: 0 16px;
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 38px 0;
+        .burger-menu{
+            .line{
+                width: 20px;
+                height: 2px;
+                background-color: #000;
+                margin-bottom: 3px;
+                &:last-child{
+                    margin: 0;
+                }
+            }
+        }
+        
+            h1{
+                text-transform: uppercase;
+                transition: 600ms;
+                .active{
+                    color: blueviolet;
+                }
+                &:hover{
+                    color: coral;
+                }
+            }
+            nav{
+                svg{
+                    &:first-child{
+                        margin-right: 20px;
+                    }
+                    &:hover{
+                        fill: coral;
+                        scale: 1.2;
+                    }
+                }
+            }
+    }
+}
