@@ -113,7 +113,7 @@ body header h1 .active {
   color: blueviolet;
 }
 body header h1:hover {
-  color: coral;
+  color: #EF5DA8;
 }
 body header nav svg:first-child {
   margin-right: 20px;
